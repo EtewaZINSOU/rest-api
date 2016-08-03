@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Place
  *
- * @ORM\Table(name="place")
+ * @ORM\Table(name="places")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PlaceRepository")
  */
 class Place
@@ -30,17 +30,6 @@ class Place
      * @ORM\Column(type="string")
      */
     protected $address;
-
-    /**
-     * Place constructor.
-     * @param $name
-     * @param $address
-     */
-    public function __construct($name, $address)
-    {
-        $this->name = $name;
-        $this->address = $address;
-    }
 
 
     /**
