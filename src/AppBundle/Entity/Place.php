@@ -3,11 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Place
  *
  * @ORM\Table(name="places")
+ * @UniqueEntity("name")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PlaceRepository")
  */
 class Place
@@ -22,12 +24,12 @@ class Place
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",type="string", length=255)
      */
     protected  $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",type="string", length=255)
      */
     protected $address;
 

@@ -35,13 +35,14 @@ class UserController extends Controller
      * @Rest\view()
      * @Rest\Get("/users/{id}")
      * @param Request $request
+     * @param User $user
      * @return JsonResponse
      */
-    public function getUserAction(Request $request)
+    public function getUserAction(Request $request,User $user)
     {
         $user_one = $this->getDoctrine()
             ->getRepository("AppBundle:User")
-            ->find($request->get('id'));
+            ->find($user);
 
 
         if(!$user_one instanceof User){
@@ -53,5 +54,4 @@ class UserController extends Controller
         return $user_one;
 
     }
-
 }
